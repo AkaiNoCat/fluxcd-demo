@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hello-world-akai
+  name: hello-world-akai
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-world-akai
+  template:
+    metadata:
+      labels:
+        app: hello-world-akai
+    spec:
+      containers:
+      - image: lyzhang1999/hello-world-flask:v1
+        name: hello-world-akai
